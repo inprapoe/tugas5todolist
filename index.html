@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="./assets/css/tailwind.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="">
+    
+    <main class="flex flex-col h-screen p-5 md:p-10 ">
+        <h1 class="w-full mb-6 text-3xl font-bold text-center md:text-5xl md:mb-10">To Do List</h1>
+        <section class="grid w-full gap-5 md:h-full md:grid-cols-3">
+            <form action="" class="flex flex-col" onsubmit="formSubmit(event); this[0].value = ''; return false;" >
+                <label for="input" class="mb-2 font-semibold"> Type things you have to do here</label>
+                <div class="flex items-center mb-1 space-x-2">
+                    <input id="input-field" class="w-full h-10 px-3 text-sm transition duration-300 bg-white border rounded-md focus:border-gray-400 focus:outline-none" onfocus="if(this.value !== '') {this.value=''}" onblur="" type="text" name="input">
+                    <input id="submit-btn" class="flex-shrink-0 w-10 h-10 font-bold rounded-md"  type="submit" value="+">
+                </div>
+                <span class="text-xs text-gray-700">You can click + button or press enter to add to the list</span>
+            </form>
+            <div  class="list-container">
+                <h2 class="mb-4 text-xl font-semibold md:text-3xl">To Do</h2>
+                <ul id="todo-list" class="flex flex-col space-y-2 ">
+                </ul>
+            </div>
+            <div class="list-container">
+                <h2 class="mb-4 text-xl font-semibold md:text-3xl">Done</h2>
+                <ul id="done-list" class="flex flex-col space-y-2 ">
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
